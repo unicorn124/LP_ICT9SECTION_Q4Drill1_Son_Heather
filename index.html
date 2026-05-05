@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRILL 1 </title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css";
+rel="stylesheet">
+
+<style>
+    
+
+    <title> Electricity Consumption Classifier </title>
+
+
+        body{
+            font-family: Arial;
+            text-align:center;
+            background:#f5f5f5
+        }
+
+        .box{
+            background:white;
+            padding:30px;
+            width:300px;
+            margin:100px auto;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.2);
+        }
+
+        button{
+            background:#f4c430;
+            border:none;
+            padding:10px 20px;
+            font-size:16px;
+            cursor:pointer;
+        }
+
+        input{
+            padding:8px;
+            margin:10px;
+            width:80%;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Electricity Consumption Classifier</h2>
+
+    <h1>kWh</h1>
+
+    <input type="number" id="kwh" placeholder="Input Kilowatt per hour">
+
+    <br>
+
+    <button onclick="classify()">Consumption Classification</button>
+
+    <p id="result"></p>
+</div>
+
+<script>
+function classify(){
+
+    let kwh = document.getElementById("kwh").value;
+    let result = "";
+
+    if(kwh < 100){
+        result = "Low Consumption";
+    }
+    else if(kwh >= 100 && kwh < 300){
+        result = "Medium Consumption";
+    }
+    else{
+        result = "High Consumption";
+    }
+
+    document.getElementById("result").innerHTML = result;
+}
+</script>
+
+</body>
+</html>
